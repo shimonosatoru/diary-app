@@ -1,0 +1,23 @@
+{
+    "master": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-diary-app-master-234040-authRole",
+            "UnauthRoleArn": "arn:aws:iam::564474575664:role/amplify-diary-app-master-234040-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::564474575664:role/amplify-diary-app-master-234040-authRole",
+            "Region": "ap-northeast-1",
+            "DeploymentBucketName": "amplify-diary-app-master-234040-deployment",
+            "UnauthRoleName": "amplify-diary-app-master-234040-unauthRole",
+            "StackName": "amplify-diary-app-master-234040",
+            "StackId": "arn:aws:cloudformation:ap-northeast-1:564474575664:stack/amplify-diary-app-master-234040/a3ab41c0-525c-11ea-8a10-060319ee749a",
+            "AmplifyAppId": "d21yxcbjsco531"
+        },
+        "categories": {
+            "function": {
+                "diaryappbfa7e825PreTokenGeneration": {}
+            },
+            "auth": {
+                "diaryappbfa7e825": {}
+            }
+        }
+    }
+}

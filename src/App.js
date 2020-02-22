@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { css } from 'glamor'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Router from './Router'
+
+class App extends Component {
+  render() {
+    return (
+      <div {...css(styles.container)}>
+        <Router />
+      </div>
+    )
+  }
 }
 
-export default App;
+const styles = {
+  container: {
+    padding: '55px 0px 50px'
+  }
+}
+
+export default App

@@ -1,116 +1,89 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const allMessage = /* GraphQL */ `
-  query AllMessage($after: String, $conversationId: ID!, $first: Int) {
-    allMessage(after: $after, conversationId: $conversationId, first: $first) {
-      author {
-        cognitoId
-        id
-        username
-        registered
-      }
-      content
-      conversationId
-      createdAt
+export const getUser = /* GraphQL */ `
+  query GetUser($id: ID!) {
+    getUser(id: $id) {
       id
-      isSent
-      recipient {
-        cognitoId
-        id
-        username
-        registered
+      username
+      conversations {
+        items {
+          id
+          convoLinkUserId
+          convoLinkConversationId
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
-      sender
+      messages {
+        items {
+          id
+          authorId
+          content
+          messageConversationId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
     }
   }
 `;
-export const allMessageConnection = /* GraphQL */ `
-  query AllMessageConnection(
-    $after: String
-    $conversationId: ID!
-    $first: Int
+export const listUsers = /* GraphQL */ `
+  query ListUsers(
+    $filter: ModelUserFilterInput
+    $limit: Int
+    $nextToken: String
   ) {
-    allMessageConnection(
-      after: $after
-      conversationId: $conversationId
-      first: $first
-    ) {
-      messages {
-        content
-        conversationId
-        createdAt
+    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
         id
-        isSent
-        sender
+        username
+        conversations {
+          nextToken
+        }
+        messages {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
       nextToken
     }
   }
 `;
-export const allMessageFrom = /* GraphQL */ `
-  query AllMessageFrom(
-    $after: String
-    $conversationId: ID!
-    $first: Int
-    $sender: String!
-  ) {
-    allMessageFrom(
-      after: $after
-      conversationId: $conversationId
-      first: $first
-      sender: $sender
-    ) {
-      author {
-        cognitoId
-        id
-        username
-        registered
+export const getConvo = /* GraphQL */ `
+  query GetConvo($id: ID!) {
+    getConvo(id: $id) {
+      id
+      messages {
+        items {
+          id
+          authorId
+          content
+          messageConversationId
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
-      content
-      conversationId
+      associated {
+        items {
+          id
+          convoLinkUserId
+          convoLinkConversationId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      name
+      members
       createdAt
-      id
-      isSent
-      recipient {
-        cognitoId
-        id
-        username
-        registered
-      }
-      sender
-    }
-  }
-`;
-export const allUser = /* GraphQL */ `
-  query AllUser($after: String, $first: Int) {
-    allUser(after: $after, first: $first) {
-      cognitoId
-      conversations {
-        nextToken
-      }
-      id
-      messages {
-        nextToken
-      }
-      username
-      registered
-    }
-  }
-`;
-export const me = /* GraphQL */ `
-  query Me {
-    me {
-      cognitoId
-      conversations {
-        nextToken
-      }
-      id
-      messages {
-        nextToken
-      }
-      username
-      registered
+      updatedAt
     }
   }
 `;

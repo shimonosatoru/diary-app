@@ -1,26 +1,27 @@
 {
-	"function": {
-		"diaryappbfa7e825PreTokenGeneration": {
-			"service": "Lambda",
-			"providerPlugin": "awscloudformation",
-			"build": true
-		}
-	},
 	"auth": {
-		"diaryappbfa7e825": {
+		"diaryapp2205c73d": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
-			"dependsOn": [
-				{
-					"category": "function",
-					"resourceName": "diaryappbfa7e825PreTokenGeneration",
-					"triggerProvider": "Cognito",
-					"attributes": [
-						"Arn",
-						"Name"
-					]
+			"dependsOn": [],
+			"customAuth": false
+		}
+	},
+	"api": {
+		"diaryApp": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authdiaryapp2205c73d"
+						}
+					}
 				}
-			]
+			}
 		}
 	}
 }

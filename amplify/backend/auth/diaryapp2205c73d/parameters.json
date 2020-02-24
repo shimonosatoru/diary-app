@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "diaryappbfa7e825_identitypool_bfa7e825",
+    "identityPoolName": "diaryapp2205c73d_identitypool_2205c73d",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "diaryabfa7e825",
-    "userPoolName": "diaryappbfa7e825_userpool_bfa7e825",
+    "resourceNameTruncated": "diarya2205c73d",
+    "userPoolName": "diaryapp2205c73d_userpool_2205c73d",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -18,8 +18,7 @@
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
-        "email",
-        "phone_number"
+        "email"
     ],
     "userpoolClientGenerateSecret": true,
     "userpoolClientRefreshTokenValidity": 30,
@@ -29,9 +28,9 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "diaryabfa7e825_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "diarya2205c73d_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "resourceName": "diaryappbfa7e825",
+    "resourceName": "diaryapp2205c73d",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -47,23 +46,8 @@
     },
     "useDefault": "default",
     "usernameAttributes": [
-        "email"
+        "email, phone_number"
     ],
-    "triggers": "{\"PreTokenGeneration\":[\"alter-claims\"]}",
     "userPoolGroupList": [],
-    "parentStack": {
-        "Ref": "AWS::StackId"
-    },
-    "permissions": [],
-    "dependsOn": [
-        {
-            "category": "function",
-            "resourceName": "diaryappbfa7e825PreTokenGeneration",
-            "triggerProvider": "Cognito",
-            "attributes": [
-                "Arn",
-                "Name"
-            ]
-        }
-    ]
+    "dependsOn": []
 }

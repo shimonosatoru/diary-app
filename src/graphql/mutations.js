@@ -1,88 +1,338 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createConversation = /* GraphQL */ `
-  mutation CreateConversation($createdAt: String, $id: ID!, $name: String!) {
-    createConversation(createdAt: $createdAt, id: $id, name: $name) {
+export const createUser = /* GraphQL */ `
+  mutation CreateUser(
+    $input: CreateUserInput!
+    $condition: ModelUserConditionInput
+  ) {
+    createUser(input: $input, condition: $condition) {
+      id
+      username
+      conversations {
+        items {
+          id
+          convoLinkUserId
+          convoLinkConversationId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      messages {
+        items {
+          id
+          authorId
+          content
+          messageConversationId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateUser = /* GraphQL */ `
+  mutation UpdateUser(
+    $input: UpdateUserInput!
+    $condition: ModelUserConditionInput
+  ) {
+    updateUser(input: $input, condition: $condition) {
+      id
+      username
+      conversations {
+        items {
+          id
+          convoLinkUserId
+          convoLinkConversationId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      messages {
+        items {
+          id
+          authorId
+          content
+          messageConversationId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteUser = /* GraphQL */ `
+  mutation DeleteUser(
+    $input: DeleteUserInput!
+    $condition: ModelUserConditionInput
+  ) {
+    deleteUser(input: $input, condition: $condition) {
+      id
+      username
+      conversations {
+        items {
+          id
+          convoLinkUserId
+          convoLinkConversationId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      messages {
+        items {
+          id
+          authorId
+          content
+          messageConversationId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createConvo = /* GraphQL */ `
+  mutation CreateConvo(
+    $input: CreateConversationInput!
+    $condition: ModelConversationConditionInput
+  ) {
+    createConvo(input: $input, condition: $condition) {
       id
       messages {
+        items {
+          id
+          authorId
+          content
+          messageConversationId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      associated {
+        items {
+          id
+          convoLinkUserId
+          convoLinkConversationId
+          createdAt
+          updatedAt
+        }
         nextToken
       }
       name
+      members
+      createdAt
+      updatedAt
     }
   }
 `;
 export const createMessage = /* GraphQL */ `
   mutation CreateMessage(
-    $content: String
-    $conversationId: ID!
-    $createdAt: String!
-    $id: ID!
+    $input: CreateMessageInput!
+    $condition: ModelMessageConditionInput
   ) {
-    createMessage(
-      content: $content
-      conversationId: $conversationId
-      createdAt: $createdAt
-      id: $id
-    ) {
+    createMessage(input: $input, condition: $condition) {
+      id
       author {
-        cognitoId
         id
         username
-        registered
-      }
-      content
-      conversationId
-      createdAt
-      id
-      isSent
-      recipient {
-        cognitoId
-        id
-        username
-        registered
-      }
-      sender
-    }
-  }
-`;
-export const createUser = /* GraphQL */ `
-  mutation CreateUser($username: String!) {
-    createUser(username: $username) {
-      cognitoId
-      conversations {
-        nextToken
-      }
-      id
-      messages {
-        nextToken
-      }
-      username
-      registered
-    }
-  }
-`;
-export const createUserConversations = /* GraphQL */ `
-  mutation CreateUserConversations($conversationId: ID!, $userId: ID!) {
-    createUserConversations(conversationId: $conversationId, userId: $userId) {
-      associated {
-        conversationId
-        userId
-      }
-      conversation {
+        conversations {
+          nextToken
+        }
+        messages {
+          nextToken
+        }
         createdAt
-        id
-        name
+        updatedAt
       }
-      conversationId
-      user {
-        cognitoId
+      authorId
+      content
+      conversation {
+        id
+        messages {
+          nextToken
+        }
+        associated {
+          nextToken
+        }
+        name
+        members
+        createdAt
+        updatedAt
+      }
+      messageConversationId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateMessage = /* GraphQL */ `
+  mutation UpdateMessage(
+    $input: UpdateMessageInput!
+    $condition: ModelMessageConditionInput
+  ) {
+    updateMessage(input: $input, condition: $condition) {
+      id
+      author {
         id
         username
-        registered
+        conversations {
+          nextToken
+        }
+        messages {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
-      userId
+      authorId
+      content
+      conversation {
+        id
+        messages {
+          nextToken
+        }
+        associated {
+          nextToken
+        }
+        name
+        members
+        createdAt
+        updatedAt
+      }
+      messageConversationId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteMessage = /* GraphQL */ `
+  mutation DeleteMessage(
+    $input: DeleteMessageInput!
+    $condition: ModelMessageConditionInput
+  ) {
+    deleteMessage(input: $input, condition: $condition) {
+      id
+      author {
+        id
+        username
+        conversations {
+          nextToken
+        }
+        messages {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      authorId
+      content
+      conversation {
+        id
+        messages {
+          nextToken
+        }
+        associated {
+          nextToken
+        }
+        name
+        members
+        createdAt
+        updatedAt
+      }
+      messageConversationId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createConvoLink = /* GraphQL */ `
+  mutation CreateConvoLink(
+    $input: CreateConvoLinkInput!
+    $condition: ModelConvoLinkConditionInput
+  ) {
+    createConvoLink(input: $input, condition: $condition) {
+      id
+      user {
+        id
+        username
+        conversations {
+          nextToken
+        }
+        messages {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      convoLinkUserId
+      conversation {
+        id
+        messages {
+          nextToken
+        }
+        associated {
+          nextToken
+        }
+        name
+        members
+        createdAt
+        updatedAt
+      }
+      convoLinkConversationId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateConvoLink = /* GraphQL */ `
+  mutation UpdateConvoLink(
+    $input: UpdateConvoLinkInput!
+    $condition: ModelConvoLinkConditionInput
+  ) {
+    updateConvoLink(input: $input, condition: $condition) {
+      id
+      user {
+        id
+        username
+        conversations {
+          nextToken
+        }
+        messages {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      convoLinkUserId
+      conversation {
+        id
+        messages {
+          nextToken
+        }
+        associated {
+          nextToken
+        }
+        name
+        members
+        createdAt
+        updatedAt
+      }
+      convoLinkConversationId
+      createdAt
+      updatedAt
     }
   }
 `;

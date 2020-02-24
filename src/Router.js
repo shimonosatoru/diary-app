@@ -36,7 +36,7 @@ class Router extends React.Component {
 const routeConfig = {
   theme: {
     button: {
-      backgroundColor: 'rgb(255, 235, 59)',
+      backgroundColor: '#2196F3',
       color: 'black'
     },
     a: {

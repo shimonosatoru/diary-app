@@ -4,7 +4,7 @@ import { css } from 'glamor'
 const Loading = () => (
   <div {...css(styles.container)}>
     <div {...css(styles.logoWrapper)}>
-      Chatt
+      Diary
     </div>
   </div>
 )
@@ -12,18 +12,15 @@ const Loading = () => (
 const styles = {
   container: {
     height: '100vh',  
-    backgroundColor: 'rgb(255, 235, 59)'
+    backgroundColor: '#2196F3'
   },
   logoWrapper: {
     display: 'flex',
     flex: 1,
     height: '100%',
     justifyContent: 'center',
-    alignItems: 'center'
-  },
-  logo: {
-    height: 60,
-    width: 255
+    alignItems: 'center',
+    color: "#fff"
   }
 }
 

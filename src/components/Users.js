@@ -76,7 +76,7 @@ const styles = {
     fontSize: 20,
     fontWeight: 500,
     margin: 0,
-    borderBottom: `2px solid rgb(255, 235, 59)`,
+    borderBottom: `2px solid #2196F3`,
     paddingBottom: 4
   }
 }

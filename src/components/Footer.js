@@ -33,7 +33,7 @@ class Footer extends React.Component {
 const styles = {
   footer: {
     height: 50,
-    backgroundColor: 'rgb(255, 235, 59)',
+    backgroundColor: '#2196F3',
     position: 'absolute',
     bottom: 0,
     left: 0,
